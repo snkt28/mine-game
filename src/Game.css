@@ -1,0 +1,40 @@
+.outerdiv{
+    padding-top: 60px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* @media (min-width: 1000px) and (max-width:20000px){
+    .outer{
+        padding-top: 40px !important;
+}} */
+
+.innerdiv{
+    /* margin: 0; */
+    /* background-color: black; */
+    width: 80%;
+    aspect-ratio: 1/1;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(5,1fr);
+    gap: 8px;
+}
+
+@media (max-width: 1050px) and (min-width:0px){
+.outerdiv{
+    padding-top: 5px;
+    /* top:40%; */
+    /* height: 650px; */
+    width: 100%;
+    aspect-ratio: 1/1;
+    /* align-self: start; */
+}
+
+.innerdiv{
+    gap: 2%;
+}
+
+}

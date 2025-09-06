@@ -1,0 +1,30 @@
+.lost {
+  position: fixed;          /* stays relative to viewport */
+  top: 0;
+  left: 0;
+  width: 100%;              /* full screen width */
+  height: 100%;             /* full screen height */
+  display: flex;            /* enable centering */
+  align-items: center;      /* vertical center */
+  justify-content: center;  /* horizontal center */
+  background: rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease-in-out; /* smooth animation */
+
+}
+
+.lost button {
+  font-size: medium;
+}
+
+.show {
+    z-index: 999;   /* normal size */
+  opacity: 1;
+  pointer-events: auto;  /* allow interaction */
+}
+
+.hide {
+    z-index: -999; 
+   /* shrink to invisible */
+  opacity: 0;
+  pointer-events: none;  /* disable clicks */
+}

@@ -1,0 +1,56 @@
+.maindiv{
+    background-color: #2c3f4c;
+    height: 500px;
+}
+
+.payouthide{
+    z-index: -99;
+    opacity: 0;
+}
+
+.maindiv input,button{
+    width: 100%
+}
+
+.maindiv button{
+    background-color: #69e545;
+    color: rgb(0, 0, 0);
+    border: none;
+    height: 35px;
+    font-size: small;
+}
+
+.maindiv h4{
+    
+    text-align: left;
+    margin: 0;
+    margin-top: 30px;
+}
+
+input {
+    font-size: large;
+    height: 30px;
+}
+
+.maindiv form{
+    margin: 40px;
+    padding-top: 4px;
+}
+
+.resultform{
+    text-align: left;
+}
+
+.resultform button{
+    height: 35px;
+}
+
+@media (max-width: 850px) and (min-width:0px){
+    .maindiv{
+        background-color: #2c3f4c;
+        width: 80%;
+        aspect-ratio: 1/1;
+    }
+
+}
+

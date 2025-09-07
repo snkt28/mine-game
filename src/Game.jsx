@@ -4,18 +4,6 @@ import Square from './square';
 import data from './data';
 
 export default function Game({updategems}){
-    // let [gamestate, setgamestate] = useState("inactive");
-    // let minearr = []
-    // if(gameState == "active"){
-    //     setgamestate("active");
-    //     for(let i=1;i<=minecount;i++){
-    //         let randomNum = Math.floor(Math.random() * 25) + 1;
-    //         if(minearr.includes(randomNum)==false){
-    //             minearr.push(randomNum);
-    //         }
-    //     }
-    //     console.log(minearr)
-    // }
 
 
     let {gameState,mine,lost} = data();
@@ -26,10 +14,12 @@ export default function Game({updategems}){
     useEffect(() => {
     if (gameState === "active") {
       let newMines = [];
-      for (let i = 1; i <= mine; i++) {
+      let i=0;
+      while(i != mine){
         let randomNum = Math.floor(Math.random() * 25) + 1;
         if (!newMines.includes(randomNum)) {
           newMines.push(randomNum);
+          i++
         }
       }
       setgem(0);

@@ -4,7 +4,7 @@ import data from './data';
 
 export default function Sidenav({gemclicked}){
     let [value, setValue] = useState({bet:0 , mine:3})
-    let {money,subMoney,setMine,setGameState,addMoney,gameState,gemclick,multiplex,addmultiplex,mine} = data();
+    let {money,subMoney,setMine,setGameState,addMoney,gameState,setpayout,setbet,setmultiplex} = data();
     let [multi, setmulti] = useState(0);
 
     let onChange=(event)=>{
@@ -22,6 +22,7 @@ export default function Sidenav({gemclicked}){
             setMine(value.mine);
             subMoney(value.bet);
             setGameState("active");
+            setbet(value.bet)
         }else{
             alert("error");
         }
@@ -33,16 +34,17 @@ export default function Sidenav({gemclicked}){
             tempmulti*=(25 - value.mine - i)/(25-i);
         }
         setmulti(1/tempmulti);
+        setmultiplex(1/tempmulti)
     },[gemclicked])
 
     //handle payout
     function handlePayout(event){
         event.preventDefault();
         console.log("quit");
+        setpayout(true);
         let profit = (value.bet*multi)
         addMoney(profit);
-        setGameState("inactive");
-        setmulti(1);
+        
 
     }
 

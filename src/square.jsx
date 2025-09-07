@@ -6,8 +6,10 @@ import data from './data';
 export default function Square({index,minearr,updategem}){
     let [val, setVal] = useState("unclicked");
     let [classN, setclassN] = useState("onebox");
-    let {gameState,setlost,lost} = data();
+    let {gameState,setlost,lost,payout} = data();
     let [cardopen , setcardopen] = useState(false);
+
+
     // if(gameState!="active"){
     //     setValue("unclicked");
     // }
@@ -26,7 +28,7 @@ export default function Square({index,minearr,updategem}){
 
     
 
-    useEffect(()=>{if(lost){
+    useEffect(()=>{if(lost || payout){
 
         if(minearr.includes(index)==true){
                 setclassN("onebombSquare");
@@ -34,7 +36,7 @@ export default function Square({index,minearr,updategem}){
         }else{
                 setclassN("onegemSquare");   
         }
-    }},[lost])
+    }},[lost, payout])
 
     let handleClick= ()=>{
         setVal("clicked"); 

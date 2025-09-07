@@ -8,20 +8,20 @@ const data = create((set)=>({
     minearray: [],
     gemclick:0,
     lost : false,
-    multiplex:1,
+    payout: false,
+    multiplex:1.00,
+    bet:0.00,
+    setbet:(val)=>set(()=>({bet:val})),
+    setmultiplex:(val)=>set(()=>({multiplex:val})),
     setgemclick: (val) => set(()=>({gemclick:val})),
     addmultiplex: (val)=>set((preval)=>({multiplex:preval.multiplex*val})),
     setlost:(val)=>set(()=>({lost:val})),
+    setpayout:(val)=>set(()=>({payout:val})),
     setminearr: (val) => set(()=>({minearr:val})), 
     setGameState: (val) =>set(()=>({gameState:val})),
     setMine: (val) =>set(() => ({mine: val})),
     addMoney: (val) =>set((prevval) => ({money: prevval.money + val})),
     subMoney: (val) =>set((prevval) => ({money: prevval.money - val})),
-    setmultiplex: (val) =>set((prevval)=>{
-        for(let i=1;i<val;i++){
-            multiplex: prevval.multiplex*(25-mine-i)/25
-        }
-    })
 }))
 
 export default data;

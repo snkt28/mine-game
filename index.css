@@ -1,0 +1,50 @@
+.footz{
+    width: 100%;
+    position: relative;
+    top: 500px;
+    text-align: center;
+    background-color: #304553;
+    padding-top: 10px;
+}
+
+.footz i:hover{
+    color: red;
+    transition: 400ms ease-in-out;
+    
+}
+
+.footz h4{
+    margin: 0;
+
+}
+
+
+
+.socials i{
+    opacity: .4;
+}
+.socials i:hover{
+    opacity: 2;
+
+}
+
+.socials i img{
+    height: 1.6rem;         /* scale with text size */
+    vertical-align: middle;
+}
+
+
+@media (max-width: 450px) {
+    .footz{
+        top: 200px;
+        height: 65px;
+        
+    }
+}
+
+@media (min-width: 851px) {
+    .footz{
+        top: 170px;
+        height: 65px;
+    }
+}
